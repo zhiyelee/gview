@@ -1,0 +1,72 @@
+// bower:scss
+// endbower
+
+.index {
+
+  .index-logo {
+    margin: 5em 0 3em;
+    .logo {
+      display: inline-block;
+      color: #fff;
+      margin-right: 1em;
+      padding:60px 30px;
+      line-height: 40px;
+      border-radius: 80px;
+      background-color: #399;
+
+      &:hover {
+        text-decoration: none;
+        color: #eed12d;
+      }
+    }
+
+    small { color: #ffaa3e; }
+  }
+
+  .usage {
+    margin: 2em 0;
+    li {
+      line-height: 1.6em;
+      font-size: 1.4em;
+      color: #777;
+    }
+
+  }
+}
+/* Custom page footer */
+.footer {
+  margin-top: 8em;
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+@import "gists";

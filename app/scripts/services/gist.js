@@ -32,12 +32,12 @@ function parseGist (gist) {
  */
 angular.module('gView')
     .factory('Gist', ['$resource', function ($resource) {
-        return $resource('https://api.github.com/gists/9403314', {id: '@id'});
+        return $resource('https://api.github.com/gists/:id', {id: '@id'});
     }])
     .factory('gistLoader', ['Gist', '$route', '$q', function (Gist, $route, $q) {
         return function () {
             var defer = $q.defer();
-            Gist.get({id: $route.current.gistId},
+            Gist.get({id: $route.current.params.gistId},
                 function (gist) {
                     gist = parseGist(gist);
                     defer.resolve(gist);

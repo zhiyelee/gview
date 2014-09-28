@@ -13,22 +13,28 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ui.router',
   ])
-  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $locationProvider.hashPrefix('!');
-    $routeProvider
-      .when('/', {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    // For any unmatched url, redirect to /state1
+//    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('index', {
+        url: '/',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .state('about', {
+        url: '/about',
+        templateUrl: 'views/about.html'
       })
-      .when('/:gistId', {
+      .state('gist', {
+        url: '/:gistId',
         templateUrl: 'views/gist.html',
         controller: 'GistCtrl',
         resolve: {
@@ -36,8 +42,5 @@ angular
                 return gistLoader();
             }]
         }
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   }]);

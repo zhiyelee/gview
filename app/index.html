@@ -5,6 +5,10 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <!--http://scotch.io/quick-tips/js/angular/pretty-urls-in-angularjs-removing-the-hashtag-->
+    <base href="/">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -23,7 +27,7 @@
     <!-- Add your site or application content here -->
     <div class="container">
 
-      <div ng-view=""></div>
+      <div ui-view=""></div>
 
       <div class="footer">
         <p><a href="https://twitter.com/zhiyelee" target="_blank">zhiylee</a> </a> build with AngularJS</p>
@@ -62,6 +66,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

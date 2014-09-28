@@ -15,13 +15,13 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router',
+    'ui.router'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
     // For any unmatched url, redirect to /state1
-//    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
       .state('index', {
@@ -38,8 +38,8 @@ angular
         templateUrl: 'views/gist.html',
         controller: 'GistCtrl',
         resolve: {
-            gist: ['gistLoader', function (gistLoader) {
-                return gistLoader();
+            gist: ['$stateParams', 'GistLoader', function ($stateParams, GistLoader) {
+                return GistLoader($stateParams);
             }]
         }
       });

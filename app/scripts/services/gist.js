@@ -34,16 +34,16 @@ angular.module('gView')
     .factory('Gist', ['$resource', function ($resource) {
         return $resource('https://api.github.com/gists/:id', {id: '@id'});
     }])
-    .factory('gistLoader', ['Gist', '$route', '$q', function (Gist, $route, $q) {
-        return function () {
+    .factory('GistLoader', ['Gist', '$q', function (Gist, $q) {
+        return function (params) {
             var defer = $q.defer();
-            Gist.get({id: $route.current.params.gistId},
+            Gist.get({id: params.gistId},
                 function (gist) {
                     gist = parseGist(gist);
                     defer.resolve(gist);
                 },
                 function (){
-                    defer.reject('fail to load gits' + $route.current.gistId);
+                    defer.reject('fail to load gits' + params.gistId);
                 }
             );
 

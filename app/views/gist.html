@@ -3,7 +3,9 @@
     <div class="file-list" ng-show="gist.fileCount">
 
         <section class="file" ng-repeat="file in gist.files">
-            <p class="file-title"><span class="label label-default">md</span>{{file.filename}}</p>
+            <p class="file-title">
+                {{file.filename}}
+            </p>
             <article markdown class="file-content"></article>
         </section>
     </div>

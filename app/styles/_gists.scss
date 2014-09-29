@@ -39,6 +39,15 @@
         max-width: 95%;
         border-radius: 5px;
       }
+
+      .unsupported-type {
+        background-color: transparent;
+        border: none;
+        font: inherit;
+        white-space: pre-wrap;
+        word-break: normal;
+        padding: 0;
+      }
     }
   }
 }

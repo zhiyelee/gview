@@ -16,8 +16,17 @@ function parseGist (gist) {
     gist.fileCount = Object.keys(files).length;
     Object.keys(files).forEach(function (name) {
         var file = files[name];
-        if ('Markdown' === file.language) {
-            file.html = marked(file.content);
+
+        switch (file.language) {
+            case 'Markdown':
+                file.html = marked(file.content);
+                break;
+            case 'JavaScript':
+                file.html = marked("```js\n" + file.content + "\n```")
+                break;
+            default:
+                file.html = "<pre class='unsupported-type'>" + file.content + "</pre>";
+                break;
         }
     });
     return gist;

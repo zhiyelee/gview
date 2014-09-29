@@ -8,6 +8,7 @@ marked.setOptions({
     pedantic: false,
     sanitize: false,
     smartLists: true,
+    highlight: highlight,
     langPrefix: ''
 });
 
@@ -22,7 +23,7 @@ function parseGist (gist) {
                 file.html = marked(file.content);
                 break;
             case 'JavaScript':
-                file.html = marked("```js\n" + file.content + "\n```")
+                file.html = marked("```js\n" + file.content + "\n```");
                 break;
             default:
                 file.html = "<pre class='unsupported-type'>" + file.content + "</pre>";
@@ -32,6 +33,30 @@ function parseGist (gist) {
     return gist;
 }
 
+function highlight (code, lang){
+    var o;
+
+    if(lang === 'js') {
+        lang = 'javascript';
+    } else if (lang === 'html') {
+        lang = 'xml';
+    }
+
+    hljs.configure({ classPrefix: '' });
+
+    if(lang){
+        o = hljs.highlight(lang, code);
+    } else {
+        o = hljs.highlightAuto(code).value;
+    }
+
+    var html = o.value;
+    if(html){
+        return html;
+    } else {
+        return code;
+    }
+}
 /**
  * @ngdoc service
  * @name gView.Gist

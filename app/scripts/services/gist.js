@@ -23,10 +23,10 @@ function parseGist (gist) {
                 file.html = marked(file.content);
                 break;
             case 'JavaScript':
-                file.html = marked("```js\n" + file.content + "\n```");
+                file.html = marked('```js\n' + file.content + '\n```');
                 break;
             default:
-                file.html = "<pre class='unsupported-type'>" + file.content + "</pre>";
+                file.html = '<pre class="unsupported-type">' + file.content + '</pre>';
                 break;
         }
     });

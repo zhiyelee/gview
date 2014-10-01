@@ -14,7 +14,8 @@
     "angular-animate": "1.2.16",
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
-    "angular-ui-router": "~0.2.11"
+    "angular-ui-router": "~0.2.11",
+    "angular-easy-social-share": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

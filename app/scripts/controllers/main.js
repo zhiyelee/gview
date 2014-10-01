@@ -8,5 +8,5 @@
  * Controller of the gView
  */
 angular.module('gView')
-  .controller('MainCtrl', function ($state) {
+  .controller('MainCtrl', function () {
   });

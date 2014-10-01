@@ -35,7 +35,7 @@
 }
 /* Custom page footer */
 .footer {
-  margin-top: 8em;
+  margin-top: 5em;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
@@ -71,3 +71,4 @@
 
 @import "gists";
 @import "highlight_github";
+@import "common";

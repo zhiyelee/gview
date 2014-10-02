@@ -1,6 +1,9 @@
-<header class="gist-header"><a ng-href="{{gist.html_url}}" class="gist-url">gist#{{gist.id}}</a></header>
+<header class="gist-header">
+    <a ng-href="{{gist.html_url}}" class="gist-url">gist#{{gist.id}}</a>
+    <div class="gist-description" ng-show="gist.description">{{gist.description}}</div>
+</header>
 <div>
-    <div class="description">{{gist.description}}</div>
+
     <div class="file-list" ng-show="gist.fileCount">
 
         <section class="file" ng-repeat="file in gist.files">

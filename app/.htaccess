@@ -215,17 +215,7 @@ AddDefaultCharset utf-8
   # RewriteBase /
 </IfModule>
 
-<IfModule mod_rewrite.c>
-        RewriteEngine on
 
-        # Don't rewrite files or directories
-        RewriteCond %{REQUEST_FILENAME} -f [OR]
-        RewriteCond %{REQUEST_FILENAME} -d
-        RewriteRule ^ - [L]
-
-        # Rewrite everything else to index.html to allow html5 state links
-        RewriteRule ^ index.html [L]
-<IfModule mod_rewrite.c>
 # ------------------------------------------------------------------------------
 # | Suppressing / Forcing the "www." at the beginning of URLs                  |
 # ------------------------------------------------------------------------------
@@ -552,3 +542,17 @@ FileETag None
 # <IfModule mod_headers.c>
 #    Header set Connection Keep-Alive
 # </IfModule>
+
+# rewrite for html5mode
+# get ride of the `#`
+<IfModule mod_rewrite.c>
+        RewriteEngine on
+
+        # Don't rewrite files or directories
+        RewriteCond %{REQUEST_FILENAME} -f [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+        RewriteRule ^ - [L]
+
+        # Rewrite everything else to index.html to allow html5 state links
+        RewriteRule ^ index.html [L]
+<IfModule mod_rewrite.c>

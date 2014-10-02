@@ -7,18 +7,38 @@
     font-weight: bold;
   }
 
+  .gist-description {
+    margin-top: 3px;
+    padding: 1em 0;
+    font-size: 1em;
+    color: #DDDDDD;
+    text-indent: 3em;
+
+    &:hover {
+      color: #666;
+      background-color: #eee;
+      border-radius: 5px;
+    }
+  }
+
 }
+
+
 .file-list {
   .file {
     margin-bottom: 5em;
 
     .file-title {
       font-size:1.2em;
-      color: #999;
+      color: #ddd;
       font-weight: bold;
       border-bottom: 1px dashed #d4d0c8;
       padding:0.2em 0;
       margin-bottom: 1.5em;
+
+      &:hover {
+        color: #666;
+      }
 
       .label {
         font-size: 80%;

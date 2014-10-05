@@ -11,9 +11,7 @@
 angular
   .module('gView', [
     'ngAnimate',
-    'ngCookies',
     'ngResource',
-    'ngSanitize',
     'ngTouch',
     'ui.router',
     'td.easySocialShare'

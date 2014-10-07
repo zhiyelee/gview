@@ -8,7 +8,11 @@
  * Controller of the gView
  */
 angular.module('gView')
-  .controller('GistCtrl', ['$scope', 'gist', '$window', function ($scope, gist, $window) {
-        $scope.gist = gist;
-        $window.document.title = gist.description + '- gView by zhiyelee';
+  .controller('GistCtrl', ['$scope', 'gistLoader', '$window', '$stateParams', function ($scope, gistLoader, $window, $stateParams) {
+        $scope.isLoading = true;
+        gistLoader($stateParams).then(function (data) {
+            $scope.isLoading = false;
+            $window.document.title = data.description + '- gView by zhiyelee';
+            $scope.gist = data;
+        });
   }]);

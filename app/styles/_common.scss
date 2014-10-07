@@ -14,9 +14,14 @@
 .loading {
 
   text-align: center;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 4em 0;
 
   .fa-spin {
     font-size: 5em;
     vertical-align: middle;
+    margin-right: 0.2em;
   }
 }

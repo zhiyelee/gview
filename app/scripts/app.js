@@ -35,11 +35,6 @@ angular
       .state('gist', {
         url: '/:gistId',
         templateUrl: 'views/gist.html',
-        controller: 'GistCtrl',
-        resolve: {
-            gist: ['$stateParams', 'gistLoader', function ($stateParams, gistLoader) {
-                return gistLoader($stateParams);
-            }]
-        }
+        controller: 'GistCtrl'
       });
   }]);

@@ -1,9 +1,9 @@
 <!--loading icon because of the promised `resolve`-->
-<div class="loading" ng-show="gist | isEmpty">
+<div class="loading" ng-show="isLoading">
     <i class="fa fa-spin fa-spinner"></i> Still loading...
 </div>
 
-<header class="gist-header">
+<header class="gist-header" ng-show="gist">
     <a ng-href="{{gist.html_url}}" class="gist-url">gist#{{gist.id}}</a>
     <div class="gist-description" ng-show="gist.description">{{gist.description}}</div>
 </header>

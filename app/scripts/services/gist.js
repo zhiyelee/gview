@@ -68,7 +68,7 @@ angular.module('gView')
     .factory('Gist', ['$resource', function ($resource) {
         return $resource('https://api.github.com/gists/:id', {id: '@id'});
     }])
-    .factory('GistLoader', ['Gist', '$q', function (Gist, $q) {
+    .factory('gistLoader', ['Gist', '$q', function (Gist, $q) {
         return function (params) {
             var defer = $q.defer();
             Gist.get({id: params.gistId},

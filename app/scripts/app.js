@@ -37,8 +37,8 @@ angular
         templateUrl: 'views/gist.html',
         controller: 'GistCtrl',
         resolve: {
-            gist: ['$stateParams', 'GistLoader', function ($stateParams, GistLoader) {
-                return GistLoader($stateParams);
+            gist: ['$stateParams', 'gistLoader', function ($stateParams, gistLoader) {
+                return gistLoader($stateParams);
             }]
         }
       });

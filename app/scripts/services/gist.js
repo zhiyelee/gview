@@ -46,9 +46,10 @@ function parseGist (gist) {
     'shell': 'bash',
     'css': 'css',
     'c': 'c',
-    'c#': 'c#',
+    'c#': 'cs',
     'html': 'html',
     'java': 'java',
+    'python': 'python',
     'php': 'php'
   };
 

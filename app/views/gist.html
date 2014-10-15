@@ -9,8 +9,7 @@
 </header>
 <div>
 
-    <div class="file-list" ng-show="gist.fileCount">
-
+    <div class="file-list" ng-hide="gist.files | isEmpty">
         <section class="file" ng-repeat="file in gist.files">
             <p class="file-title">
                 {{file.filename}}
